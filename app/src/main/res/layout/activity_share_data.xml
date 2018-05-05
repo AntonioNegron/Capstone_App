@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.antonio.greenhouse_testapp1.activity_share_data">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <!-- Title -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:layout_weight="0.2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="32sp"
+                        android:text="@string/system_data_label"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="32sp"
+                        android:text="@string/sharing"/>
+                </LinearLayout>
+
+                <!-- Content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="0.8">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorBlack"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                    <!-- Time -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="7dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp"
+                            android:layout_alignParentStart="true"
+                            android:layout_toStartOf="@+id/time_divider"
+                            android:text="@string/time_share"/>
+
+                        <View
+                            android:id="@+id/time_divider"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_centerInParent="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/all_time"
+                            android:textSize="18sp"
+                            android:layout_toEndOf="@+id/time_divider"
+                            android:textAlignment="textEnd"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/All"/>
+
+                        <Switch
+                            android:id="@+id/all_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"/>
+
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="20dp">
+
+
+                        <!-- From when -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="0.5">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Start"/>
+
+                            <!-- Use time picker -->
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/startDateButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:text="@string/share_time"/>
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                        <!-- Divide Buttons -->
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".05"/>
+
+                        <!-- To when -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="0.5">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/End"/>
+
+                            <!-- Use time picker -->
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/endDateButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:text="@string/share_time"/>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/time_set_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/from_time"
+                            android:textColor="@color/colorBlack"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/from_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:textColor="@color/colorBlack"
+                                android:text="@string/time_divider"/>
+
+                            <TextView
+                                android:id="@+id/from_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/to_time"
+                            android:textColor="@color/colorBlack"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/to_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:textColor="@color/colorBlack"
+                                android:text="@string/time_divider"/>
+
+                            <TextView
+                                android:id="@+id/to_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorBlack"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                    <!-- Sensors -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/sensor_share"/>
+                    <Switch
+                        android:id="@+id/include_humidity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/humidity_sensor"/>
+                    <Switch
+                        android:id="@+id/include_temperature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/temperature_sensor"/>
+                    <Switch
+                        android:id="@+id/include_CO2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/CO2_sensor"/>
+                    <Switch
+                        android:id="@+id/include_pH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/pH_sensor"/>
+                    <Switch
+                        android:id="@+id/include_lighting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/lighting_used"/>
+
+                    <!-- Data to include -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/data_to_include"/>
+                    <Switch
+                        android:id="@+id/include_graphs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/include_graphs"/>
+                    <Switch
+                        android:id="@+id/include_tables"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/include_table"/>
+
+                    <!-- Extra margin -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"/>
+
+                </LinearLayout>
+
+                <!-- Extra margin -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/share_button"
+                        android:layout_width="200dp"
+                        android:layout_height="75dp"
+                        android:text="@string/share"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <!-- Extra margin -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
